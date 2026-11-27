@@ -34,10 +34,10 @@ int main(void){
             case 'a':
                 printf("Enter rows and columns (1-%d): ", SIZE);
                 status = read_pair(&k, &m);
-                if (status == 1) {
+                if (status == 1){
                     if (k < 1 || k > SIZE || m < 1 || m > SIZE){
                         printf("Invalid size.\n");
-                    } else {
+                    } else{
                         rows = (size_t)k;
                         cols = (size_t)m;
                         ready = 0;
@@ -72,7 +72,7 @@ int main(void){
             case 'f':
                 printf("Enter k and m (row indices 0-%zu): ", rows - 1);
                 status = read_pair(&k, &m);
-                if (status == 1) {
+                if (status == 1){
                     if (k < 0 || m < k || (size_t)m >= rows)
                         printf("Invalid range.\n");
                     else
