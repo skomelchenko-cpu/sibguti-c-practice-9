@@ -29,8 +29,8 @@ void clear_line(void){
     }
 }
 int fill_matrix(int *matptr, size_t rows, size_t cols){
-    for (size_t i = 0; i < rows; i++) {
-        for (size_t j = 0; j < cols; j++) {
+    for (size_t i = 0; i < rows; i++){
+        for (size_t j = 0; j < cols; j++){
             int status = read_int(matptr + i * cols + j);
             if (status != 1)
                 return status;
@@ -39,8 +39,8 @@ int fill_matrix(int *matptr, size_t rows, size_t cols){
     return 1;
 }
 void print_matrix(int *matptr, size_t rows, size_t cols){
-    for (size_t i = 0; i < rows; i++) {
-        for (size_t j = 0; j < cols; j++) {
+    for (size_t i = 0; i < rows; i++){
+        for (size_t j = 0; j < cols; j++){
             int *p = matptr + i * cols + j;
             printf("(%zu, %zu): %d  %p\n", i, j, *p, (void *)p);
         }
@@ -48,8 +48,8 @@ void print_matrix(int *matptr, size_t rows, size_t cols){
 }
 int matrix_min(int *matptr, size_t rows, size_t cols){
     int min = *matptr;
-    for (size_t i = 0; i < rows; i++) {
-        for (size_t j = 0; j < cols; j++) {
+    for (size_t i = 0; i < rows; i++){
+        for (size_t j = 0; j < cols; j++){
             if (*(matptr + i * cols + j) < min)
                 min = *(matptr + i * cols + j);
         }
@@ -58,8 +58,8 @@ int matrix_min(int *matptr, size_t rows, size_t cols){
 }
 size_t count_range(int *matptr, size_t rows, size_t cols, int k, int m){
     size_t count = 0;
-    for (size_t i = 0; i < rows; i++) {
-        for (size_t j = 0; j < cols; j++) {
+    for (size_t i = 0; i < rows; i++){
+        for (size_t j = 0; j < cols; j++){
             int x = *(matptr + i * cols + j);
             if (x >= k && x <= m)
                 count++;
@@ -69,7 +69,7 @@ size_t count_range(int *matptr, size_t rows, size_t cols, int k, int m){
 }
 long long sum_rows(int *matptr, size_t rows, size_t cols, size_t k, size_t m){
     long long sum = 0;
-    for (size_t i = k; i < rows && i <= m; i++) {
+    for (size_t i = k; i < rows && i <= m; i++){
         for (size_t j = 0; j < cols; j++)
             sum += *(matptr + i * cols + j);
     }
